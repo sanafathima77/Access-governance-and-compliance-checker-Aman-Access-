@@ -9,8 +9,8 @@ and produces a browser dashboard.
 
 ## Why this project
 
-Banks are audited on one question again and again: *who has access to what, and should they?* In Oman, banks
-follow cyber security and resilience framework, which includes access control management and third-party controls, and most also align to ISO/IEC 27001. The failures auditors find are predictable: people who left but still have logins, people who changed department and kept their old access,
+Banks are audited on one question again and again: *who has access to what, and should they?*
+Banks follow cyber security and resilience framework, which includes access control management and third-party controls, and most also align to ISO/IEC 27001. The failures auditors find are predictable: people who left but still have logins, people who changed department and kept their old access,
 administrators without multi-factor login, one person able to both create and approve a payment. AmanAccess
 turns each of those into a rule that can be run, tested and explained.
 
