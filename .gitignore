@@ -1,0 +1,13 @@
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+venv/
+
+# Data you may download yourself (the CMU benchmark is not redistributed here)
+DSL-StrongPasswordData.csv
+
+# OS / editor
+.DS_Store
+Thumbs.db
