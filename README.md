@@ -2,9 +2,7 @@
 
 An access-governance checker for a bank. It reads three tables (HR records, accounts, permissions), runs nine
 rules that find the access problems auditors ask about, scores the risk, builds a review queue for managers,
-and produces a browser dashboard. *Aman* is Arabic for safety.
-
-Everything runs on the Python standard library. There is nothing to install.
+and produces a browser dashboard. 
 
 **Live dashboard:** open `docs/index.html` (double-click it). Once this repo is on GitHub, turn on GitHub Pages
 (Settings, Pages, deploy from branch `main`, folder `/docs`) to get a public link.
@@ -12,9 +10,7 @@ Everything runs on the Python standard library. There is nothing to install.
 ## Why this project
 
 Banks are audited on one question again and again: *who has access to what, and should they?* In Oman, banks
-follow the Central Bank of Oman's cyber security and resilience framework, which includes access control
-management and third-party controls, and most also align to ISO/IEC 27001. The failures auditors find are
-predictable: people who left but still have logins, people who changed department and kept their old access,
+follow cyber security and resilience framework, which includes access control management and third-party controls, and most also align to ISO/IEC 27001. The failures auditors find are predictable: people who left but still have logins, people who changed department and kept their old access,
 administrators without multi-factor login, one person able to both create and approve a payment. AmanAccess
 turns each of those into a rule that can be run, tested and explained.
 
@@ -64,9 +60,6 @@ IDs such as `E0042` and `X017`.
 | R8 Service account without owner | Service or shared account with no owner, or an owner who has left | A.5.16, A.5.9 |
 | R9 Expired contractor | Contract ended more than 1 day ago; account still active | A.5.18, A.6.5, A.5.19 |
 
-The mapping to the Central Bank of Oman framework (Access Control Management for R1 to R8, Third Party Supply
-Chain for R9) is **indicative**. Check control numbers and wording against the current official texts before
-citing them anywhere formal.
 
 Design choices that matter:
 
@@ -107,10 +100,6 @@ approved SoD exceptions. The list of what was planted is the answer key.
 - The catalog is validated: role templates stay inside department scope and never grant a conflicting pair.
 - CSV round trip, malformed-file errors, scoring, queue rules and the dashboard's data embedding are covered.
 - As a spot check, deliberately breaking seven separate rule conditions made the suite fail each time.
-
-**What the self-check does and does not show.** The dashboard's "Engine self-check" table (118 of 118) shows that the
-rules do what they are written to do, on data built to test them. It is not a detection rate for a real bank. Real
-data is messier, and its answer key is the auditor's judgement.
 
 ## Using your own data
 
